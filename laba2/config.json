@@ -1,0 +1,6 @@
+{
+  "memory": 1024,
+  "max_processes": 10,
+  "initial_speed_hz": 1.0,
+  "default_process_size": 128,
+}
