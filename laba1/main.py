@@ -1,15 +1,11 @@
-# laba1/main.py
-
 import json
 import os
 from src.os import OperatingSystem
 from src.ui import CLI
 
 def load_config(path: str = "config.json") -> dict:
-    """Загружает конфигурацию из JSON-файла."""
     base_dir = os.path.dirname(os.path.abspath(__file__))
     config_path = os.path.join(base_dir, path)
-    
     try:
         with open(config_path, 'r') as f:
             return json.load(f)
@@ -22,9 +18,7 @@ def load_config(path: str = "config.json") -> dict:
 
 
 def main():
-    """Основная функция для запуска эмулятора ОС."""
     print("Инициализация эмулятора...")
-    
     config = load_config()
     os_emulator = OperatingSystem(config)
     cli = CLI(os_emulator)
@@ -34,4 +28,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
