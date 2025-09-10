@@ -1,0 +1,10 @@
+{
+  "memory": 1024,
+  "max_processes": 10,
+  "initial_speed_hz": 1.0,
+  "default_process_size": 128,
+  "quantum_length": 5,
+  "program_length": 30,
+  "io_command_probability": 0.2,
+  "io_duration": 15
+}
