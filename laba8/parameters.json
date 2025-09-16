@@ -1,0 +1,30 @@
+{
+  "system_params": {
+    "memory": {
+      "min": 1024, "max": 1024, "step": 1, "comment": "Общий объем памяти"
+    },
+    "max_processes": {
+      "min": 10, "max": 10, "step": 1, "comment": "Максимальное количество процессов в системе"
+    },
+    "quantum_length": {
+      "min": 5, "max": 15, "step": 5, "comment": "Длина кванта времени"
+    },
+    "io_duration": {
+      "min": 10, "max": 20, "step": 5, "comment": "Длительность операции ввода-вывода"
+    },
+    "initial_speed_hz": {
+      "min": 1.0, "max": 1.0, "step": 1.0, "comment": "Начальная скорость симуляции (тактов/сек)"
+    }
+  },
+  "task_params": {
+    "process_size": {
+      "min": 64, "max": 256, "step": 32, "comment": "Размер нового процесса"
+    },
+    "program_length": {
+      "min": 20, "max": 50, "step": 10, "comment": "Длина программы нового процесса"
+    },
+    "io_command_probability": {
+      "min": 0.1, "max": 0.3, "step": 0.1, "comment": "Вероятность I/O команды"
+    }
+  }
+}
