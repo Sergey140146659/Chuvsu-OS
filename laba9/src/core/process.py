@@ -1,0 +1,33 @@
+from enum import Enum
+from itertools import count
+
+class ProcessState(Enum):
+    NEW = "NEW"
+    LOADING = "Загружается"
+    READY = "Готов"
+    RUNNING = "Выполняется"
+    IO_WAIT = "Ожид. I/O"
+    SUSPENDED = "Приостановлен"
+    TERMINATED = "Завершен"
+
+
+
+class Process:
+    _id_counter = count(0)
+    def __init__(self, size: int, program_length: int, creation_tick: int, io_probability: float):
+        self.pid: int = next(self._id_counter)
+        self.size: int = size
+        self.program_counter: int = 0
+        self.state: ProcessState = ProcessState.NEW
+        self.ticks_worked_in_quantum: int = 0
+        self.program_length: int = program_length
+        self.io_time_remaining: int = 0
+        self.creation_tick: int = creation_tick
+        self.wait_time: int = 0
+        self.mono_execution_time: int = 0
+        self.io_probability: float = io_probability
+
+
+
+    def __repr__(self) -> str:
+        return f"Process(pid={self.pid}, state={self.state.value}, pc={self.program_counter}, size={self.size})"
